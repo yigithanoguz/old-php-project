@@ -1,0 +1,322 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{ /* değişken tanımlama */
+    --siyah: rgb(24, 24, 27); /* container rengi */
+    --beyaz: rgb(246, 246, 246); /* yazı rengi */
+    --body: rgb(48, 48, 48); /* body rengi */
+    --topbar: rgb(34, 4, 59); /* top-bar rengi */
+    --amor: rgb(92, 66, 134);
+    --pmor: rgb(65, 47, 95);
+}
+.mid{ /* içerisindeki ögeleri yatay hizada ortalar ve alt alta dizer */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body{
+    background-color:var(--body);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.top-bar{ /* sayfa üstündeki bar */
+    width: 100%;
+    height: 80px;
+    background-color: var(--topbar);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 60px;
+    font-weight: bold;
+}
+.top-btn{ /* top-bar içindeki <a> tagleri */
+    margin: 10px;
+    text-decoration: none;
+    color: rgb(246, 246, 246);
+    border: none;
+    padding: 15px;
+    border-radius: 30px;
+    background-color: var(--pmor);
+    transition: 0.3s;
+}
+.top-btn:hover{
+    background-color: var(--amor);
+}
+
+.sayfa{
+    box-sizing: border-box;
+    border-right: var(--amor) solid 3px;
+    border-left: var(--amor) solid 3px;
+}
+
+::selection{ /* seçili ögelerin arkaplan rengi */
+    background: rgb(92, 66, 134);
+}
+
+
+.container{ /* giriş ve kayıt sayfalarındaki doldurulabilir alan kutusu */
+    width: 400px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color:rgb(24, 24, 27);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    user-select: none;
+    color: rgb(246, 246, 246);
+}
+h1{ /* giriş yap kayıt ol yazısı */
+    color: rgb(246, 246, 246);
+    font-size: 28px;
+}
+
+.txbox, /* textbox , checkbox , button classları */
+.chkbox,
+.btn{ 
+    width: 340px;
+    height: 40px;
+    border-radius: 8px;
+    margin: 10px;
+    outline: none; /* tıklandığında beliren çizgiyi kaldırır */
+    font-size: 14px;
+}
+.lbl{ /* formdaki labelların classı */
+    margin: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(246, 246, 246);
+}
+
+.txbox{
+    padding: 10px;
+    background-color: rgb(70, 70, 73);
+    border: none;
+    color: rgb(246, 246, 246);
+}
+
+.txbox:hover{
+    transition: 0.3s;
+    border: solid 1px rgb(118, 118, 122);
+}
+.txbox:focus{
+    transition: 0.3s;
+    outline: none;
+    border: solid 1px rgb(92, 66, 134);
+    background-color: rgb(0, 0, 0);
+}
+
+/* butona eklediğim javascript kodunun çalışması için oluşturduğum classlar başlangıç*/
+.pasif{
+    border: none;
+    background-color: rgb(70, 70, 73);
+    color: rgb(246, 246, 246);
+    font-weight: bold;
+    font-size: 14px; 
+}
+.pasif:hover{
+    cursor: not-allowed;
+}
+.aktif{
+    border: none;
+    color: rgb(246, 246, 246);
+    font-weight: bold;
+    font-size: 14px;
+    background-color: rgb(92, 66, 134);
+}
+.aktif:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: rgb(65, 47, 95);
+}
+/* butona eklediğim javascript kodunun çalışması için oluşturduğum classlar bitiş*/
+
+/* parolayı göster seçenegi css başlangıç */
+#pg{
+    width: 20px;
+    margin-top: 0px;
+    color: rgb(118, 118, 122);
+    cursor: pointer;
+}
+.pg-class{
+    display: flex;
+    flex-direction: row;
+    color: rgb(246, 246, 246);
+    
+}
+.pg-class > p{
+    margin-top: 12px;
+    font-size: 14px;
+    cursor: pointer;
+}
+/* parolayı göster seçenegi css bitiş */
+
+.mor-yazi{/* container içindeki buton altındaki mor yazının classı*/
+    margin: 10px 20px;
+    font-size: 14px;
+    color: rgb(92, 66, 134);
+    align-self: flex-start;
+    text-decoration: none;
+}
+.mor-yazi:hover{
+    text-decoration: underline;
+}
+
+/* autocomplete (otomatik tamamlama) css başlangıç */
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    henüz hazır değil    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+/* autocomplete (otomatik tamamlama) css bitiş */
+
+/* scrollbar (yan çubuk) css başlangıç*/
+::-webkit-scrollbar {
+    width: 10px; /*sağ çubuk*/
+    height: 10px; /* alt çubuk */
+    background-color: rgb(24, 24, 27); /*scrollbar arkaplan renk*/
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(118, 118, 122); /*scrollbar renk*/
+    border-radius:15px /*oval olsun*/
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #7d7d7d;
+}
+/* scrollbar (yan çubuk) css bitiş*/
+
+#dosya{ /* input[type="file"] (dosya yükleme sayfasındaki input) */
+    margin: 10px;
+}
+#aciklama{ /* textarea (dosya yükleme sayfasındaki textarea) */
+    width: 340px;
+    height: 80px;
+    margin: 10px;
+    border-radius: 8px;
+    resize: vertical;
+    overflow: hidden;
+    outline: none;
+    padding: 10px;
+    font-size: 14px;
+    background-color: rgb(48, 48, 48);
+    color: var(--beyaz);
+}
+
+.icerik{
+ background-color: var(--siyah);
+ width: 1000px;
+}
+.gonderi{
+    margin-bottom: 10px;
+}
+video{
+    width: 750px;
+    max-height: 750px;
+    border-radius: 14px;
+    border: solid 3px var(--amor);
+    margin: 10px 0px;
+}
+.sol{
+    margin-left: 10px;
+}
+.sol20{
+    margin-left: 20px;
+}
+.ust{
+    margin-top: 10px;
+}
+.cizgi{
+    width: 1000px;
+    height: 10px;
+    color: var(--body);
+    background-color: var(--body);
+    border: none;
+}
+.ince{
+    width: 100%;
+    height: 2px;
+    color: var(--body);
+    background-color: var(--body);
+    border: none;
+}
+.dikey{
+    display: flex;
+    flex-flow: column wrap;
+}
+.yatay{
+    display: flex;
+    flex-flow: row wrap;
+}
+.dikey>h2{
+    font-size: 18px;
+    color: var(--amor);
+    font-weight: bold;
+}
+.dikey>p{
+    width: 750px;
+    display: inline-block;  /* altındaki kodla birlikte alt satıra geçmesi sağlanıyor */
+    word-break: break-word;
+    font-size: 18px;
+    color: var(--beyaz);
+}
+
+.yatay>h2{
+    font-size: 18px;
+    color: var(--amor);
+    font-weight: bold;
+}
+.yatay>p{
+    width: 750px;
+    display: inline-block;  /* altındaki kodla birlikte alt satıra geçmesi sağlanıyor */
+    word-break: break-word;
+    font-size: 18px;
+    color: var(--beyaz);
+}
+
+.gonderi>h1{
+    color: var(--amor);
+}
+.like{
+    background-color: red;
+    border: solid 2px var(--topbar);
+    border-radius: 100px;
+}
+.like:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: var(--amor);
+    border: solid 2px var(--topbar);
+}
+.nolike{
+    border: solid 2px var(--topbar);
+    border-radius: 100px;
+    background-color: var(--amor);
+}
+.nolike:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: red;
+}
+.oval{
+    border-radius: 8px;
+    border: solid 2px var(--topbar);
+    padding: 10px;
+}
+.ybtn{
+    color: rgb(246, 246, 246);
+    font-weight: bold;
+    font-size: 14px;
+    background-color: var(--pmor);
+}
+.ybtn:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: var(--amor)
+}
+.this{ /* mevcut sayfa */
+    border-bottom: 3px solid var(--amor);
+}
